@@ -19,4 +19,11 @@ class Shedul {
         return flag;
     }
 
+    public ArrayList<User> getListUser() {
+        return ListUser;
+    }
+
+    public void setListUser(ArrayList<User> listUser) {
+        ListUser = listUser;
+    }
 }
