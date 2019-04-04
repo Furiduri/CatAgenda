@@ -1,8 +1,10 @@
-package com.example.catagenda;
+package com.example.catagenda.entidades;
+
+import com.example.catagenda.entidades.User;
 
 import java.util.ArrayList;
 
-class Shedul {
+public class Shedul {
     ArrayList<User> ListUser;
 
     public void AddUser(User user){
