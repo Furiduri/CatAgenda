@@ -10,13 +10,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ArrayList<User> ListUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ArrayList<User>[] ListUser = new ArrayList[0];
-        ListUser[0] = new ArrayList<User>();
+        ListUser = new ArrayList<User>();
         final boolean[] flag = {false};
         final Shedul sh = new Shedul();
         final User U = new User();
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 U.setNombre(txtNombre.getText().toString());
                 sh.AddUser(U);
-                ListUser[0] = sh.getListUser();
+                ListUser = sh.getListUser();
             }
 
         });
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sh.setListUser(ListUser[0]);
+                sh.setListUser(ListUser);
                 flag[0] = sh.BuscarNombre(txtBuscar.getText().toString());
                 Toast.makeText(getApplication(),"Usuario"+ flag[0],Toast.LENGTH_LONG).show();
             }
