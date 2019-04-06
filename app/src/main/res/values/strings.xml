@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">CatAgenda</string>
+    <string name="app_name" translatable="false">CatAgenda</string>
+    <string name="SName">Name</string>
+    <string name="SPhone">Phone</string>
+    <string name="SEmail">Email</string>
+    <string name="SClear">Clear</string>
+    <string name="SSave">Save</string>
 </resources>

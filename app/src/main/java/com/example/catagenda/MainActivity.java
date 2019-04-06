@@ -17,14 +17,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent miItent =null;
+
         switch (view.getId()){
             case R.id.btnViewAdd:
-                miItent = new Intent(MainActivity.this, register_userActivity.class);
+                Intent miItent = new Intent(this, register_userActivity.class);
+                startActivity(miItent);
                 break;
-        }
-        if(miItent != null){
-            startActivity(miItent);
         }
     }
 }
