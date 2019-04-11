@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListUser = new ArrayList<User>();
         final boolean[] flag = {false};
-        final Shedul sh = new Shedul();
-        final User U = new User();
+        final Shedul sh = new Shedul(ListUser);
         final EditText txtNombre = findViewById(R.id.txtNombre);
         final EditText txtBuscar = findViewById(R.id.txtBuscar);
         final Button btnAdd =  findViewById(R.id.btnAdd);
@@ -27,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sh.setListUser(ListUser);
+                User U = new User();
                 U.setNombre(txtNombre.getText().toString());
                 sh.AddUser(U);
                 ListUser = sh.getListUser();
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 sh.setListUser(ListUser);
                 flag[0] = sh.BuscarNombre(txtBuscar.getText().toString());
                 Toast.makeText(getApplication(),"Usuario"+ flag[0],Toast.LENGTH_LONG).show();
+                ListUser = sh.getListUser();
             }
         });
     }

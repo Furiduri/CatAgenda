@@ -5,8 +5,11 @@ import java.util.ArrayList;
 class Shedul {
     ArrayList<User> ListUser;
 
+    public Shedul(ArrayList<User> listUser) {
+        ListUser = listUser;
+    }
+
     public void AddUser(User user){
-        ListUser = new ArrayList<User>();
         ListUser.add(user);
     }
     public boolean BuscarNombre(String Param){
